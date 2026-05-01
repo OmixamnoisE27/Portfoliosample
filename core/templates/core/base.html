@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximo Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS ANIMATION LIB -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* glow animation */
+        .glow {
+            text-shadow: 0 0 20px rgba(59,130,246,0.8);
+        }
+
+        /* floating animation */
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-gray-900/70 backdrop-blur border-b border-gray-800 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between p-4">
+        <h1 class="font-bold text-blue-400">Maximo.dev</h1>
+        <div class="space-x-6 text-sm">
+            <a href="/" class="hover:text-blue-400">Home</a>
+            <a href="/about" class="hover:text-blue-400">About</a>
+            <a href="/projects" class="hover:text-blue-400">Projects</a>
+            <a href="/contact" class="hover:text-blue-400">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-24">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- AOS + TYPING SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+</script>
+
+<!-- typing effect -->
+<script>
+const text = "Django Developer • Backend Engineer • UI Builder";
+let i = 0;
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 60);
+    }
+}
+window.onload = type;
+</script>
+
+</body>
+</html>

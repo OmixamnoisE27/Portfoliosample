@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="max-w-3xl mx-auto px-6 py-20" data-aos="fade-up">
+
+    <h1 class="text-4xl font-bold mb-8">Contact Me</h1>
+
+    <form method="POST" class="space-y-5 bg-gray-900/60 p-6 rounded-xl backdrop-blur">
+        {% csrf_token %}
+
+        <input name="name" placeholder="Your Name"
+               class="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500">
+
+        <input name="email" placeholder="Your Email"
+               class="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500">
+
+        <textarea name="message" rows="5" placeholder="Message"
+                  class="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+
+        <button class="w-full py-3 bg-blue-500 hover:scale-105 transition rounded-lg">
+            Send Message
+        </button>
+    </form>
+
+</section>
+{% endblock %}
